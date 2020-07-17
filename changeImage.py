@@ -5,5 +5,6 @@ mypath = os.path.expanduser("~/supplier-data/images/")
 onlyfiles = [f for f in os.listdir(mypath) if f.endswith('.tiff')]
 for i in onlyfiles:
     im = Image.open("{}{}".format(mypath,i))
-    rgb_im = im.convert('RGB')
-    rgb_im.save("{}{}.jpeg".format(mypath,i[:3]).strip(".tiff"))
+    foo = im.convert('RGB')
+    foo = foo.resize((600,400),Image.ANTIALIAS)
+    foo.save("{}{}.jpeg".format(mypath,i.strip(".tiff")))
