@@ -10,5 +10,5 @@ for i in onlyfiles:
 	with open("{}{}".format(mypath,i)) as text_files:
 		lines = text_files.read().strip().split('\n')
 		dict = { "name":lines[0],"weight":int(lines[1].strip(" lbs")),"description":lines[2],"image_name":"{}.jpeg".format(i[0:3])}
-		rep = requests.post("http://34.67.1.209/fruits/",data=dict)
+		rep = requests.post("http://localhost/fruits/",data=dict)
 		print(rep.status_code)
